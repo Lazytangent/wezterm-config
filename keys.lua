@@ -1,4 +1,6 @@
 local wezterm = require("wezterm")
+local add_leader_keybind = require("utils").add_leader_keybind
+
 local action = wezterm.action
 
 local LEADER = "LEADER"
@@ -10,13 +12,6 @@ wezterm.on("update-right-status", function(window, pane)
   end
   window:set_right_status(name or "")
 end)
-
-local add_leader_keybind = function(keys_table, bind)
-  local keybind = bind or {}
-  keybind.mods = bind.mods or LEADER
-
-  table.insert(keys_table, keybind)
-end
 
 local keys = {}
 

@@ -1,27 +1,13 @@
 local wezterm = require("wezterm")
+local u = require("utils")
+
+local remove_file = u.remove_file
+local replace_home = u.replace_home
+local pad_with_space = u.pad_with_space
+local include_copy_prefix = u.include_copy_prefix
 
 local right = utf8.char(0xe0bc)
 local left = utf8.char(0xe0ba)
-
-local remove_file = function(s)
-  return string.gsub(s, "file://(.*)", "%1")
-end
-
-local replace_home = function(s)
-  return string.gsub(s, "^/Users/petermai(.*)", "~%1")
-end
-
-local pad_with_space = function(s)
-  return s .. " "
-end
-
-local include_copy_prefix = function(s, original)
-  if string.find(original, "Copy mode") ~= nil then
-    return "Copy Mode: " .. s
-  end
-
-  return s
-end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local pane = tab.active_pane
