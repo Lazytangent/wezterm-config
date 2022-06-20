@@ -15,9 +15,20 @@ local pad_with_space = function(s)
   return s .. " "
 end
 
+local include_copy_prefix = function(s, original)
+  if string.find(original, "Copy mode") ~= nil then
+    return "Copy Mode: " .. s
+  end
+
+  return s
+end
+
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local title_text = replace_home(remove_file(tab.active_pane.current_working_dir))
-  local title = pad_with_space(tab.active_pane.pane_id .. ": " .. title_text)
+  local pane = tab.active_pane
+  local original_title = pane.title
+
+  local title_text = include_copy_prefix(replace_home(remove_file(pane.current_working_dir)), original_title)
+  local title = pad_with_space(pane.pane_id .. ": " .. title_text)
 
   local right_edge_background = "#1e1e2e"
   local left_edge_background = "#1e1e2e"
