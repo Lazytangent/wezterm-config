@@ -38,12 +38,12 @@ end
 
 utils.dump = function(o)
   if type(o) == "table" then
-    local s = "{ "
+    local s = "{\n"
     for k, v in pairs(o) do
       if type(k) ~= 'number' then k = '"' .. k ..'"' end
-      s = s .. '[' .. k .. ']' .. utils.dump(v) .. ','
+      s = s .. '\t[' .. k .. '] = ' .. utils.dump(v) .. ','
     end
-    return s .. '}'
+    return s .. '\n}'
   else
     return tostring(o)
   end
