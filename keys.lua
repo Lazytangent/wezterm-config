@@ -29,6 +29,7 @@ local keysbinds = {
   {key="t", action=action{SpawnTab="DefaultDomain"}},
   {key="w", action=action{ShowLauncherArgs={flags="DOMAINS"}}},
   {key="d", action=action{DetachDomain="CurrentPaneDomain"}},
+  {key=",", action="ShowDebugOverlay"},
 
   {key="m", mods=LEADER, action=action{
     ActivateKeyTable={
@@ -41,6 +42,14 @@ local keysbinds = {
   {key="l", mods="LEADER|CTRL", action=action{
     ActivateKeyTable={
       name="launchers",
+      one_shot=true,
+      replace_current=false,
+      timeout_milliseconds=1000,
+    },
+  }},
+  {key="f", mods="LEADER|CTRL", action=action{
+    ActivateKeyTable={
+      name="ctrl_f",
       one_shot=true,
       replace_current=false,
       timeout_milliseconds=1000,
