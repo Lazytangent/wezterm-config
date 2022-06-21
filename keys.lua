@@ -19,17 +19,18 @@ end)
 local keys = {}
 
 local keysbinds = {
-  {key="s", action=action.SplitVertical{domain="CurrentPaneDomain"}},
-  {key="v", action=action.SplitHorizontal{domain="CurrentPaneDomain"}},
-  {key="x", action=action.CloseCurrentPane{confirm=true}},
+  {key=",", action=action.ShowDebugOverlay},
   {key="[", action=action.ActivateCopyMode},
+
+  {key="c", action=action.SpawnTab("CurrentPaneDomain")},
+  {key="d", action=action.DetachDomain("CurrentPaneDomain")},
   {key="n", action=action.ActivateTabRelative(1)},
   {key="p", action=action.ActivateTabRelative(-1)},
-  {key="c", action=action.SpawnTab("CurrentPaneDomain")},
+  {key="s", action=action.SplitVertical{domain="CurrentPaneDomain"}},
   {key="t", action=action.SpawnTab("DefaultDomain")},
+  {key="v", action=action.SplitHorizontal{domain="CurrentPaneDomain"}},
   {key="w", action=action.ShowLauncherArgs{flags="DOMAINS"}},
-  {key="d", action=action.DetachDomain("CurrentPaneDomain")},
-  {key=",", action=action.ShowDebugOverlay},
+  {key="x", action=action.CloseCurrentPane{confirm=true}},
 
   {key="m", mods=LEADER, action=action.ActivateKeyTable{
       name="localleader",
