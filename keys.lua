@@ -63,17 +63,16 @@ end
 for i = 1, 8 do
   add_leader_keybind(keys, {
     key=tostring(i),
-    action=action{ActivateTab=i-1},
+    action=action.ActivateTab(i-1),
   })
 end
 
-add_keybind(keys, {key="s", mods="CTRL", action=action{
-  ActivateKeyTable={
+add_keybind(keys, {key="s", mods="CTRL", action=action.ActivateKeyTable{
     name="ctrl_s",
     one_shot=true,
     replace_current=false,
     timeout_milliseconds=1000,
   },
-}})
+})
 
 return keys

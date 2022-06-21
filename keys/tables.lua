@@ -6,12 +6,12 @@ local action = wezterm.action
 
 return {
   localleader = {
-    {key="Escape", action="PopKeyTable"},
+    {key="Escape", action=action.PopKeyTable},
   },
 
   launchers = {
-    {key="d", action="ShowLauncher"},
-    {key="Escape", action="PopKeyTable"},
+    {key="d", action=action.ShowLauncher},
+    {key="Escape", action=action.PopKeyTable},
   },
 
   ctrl_f = ctrl_f,
