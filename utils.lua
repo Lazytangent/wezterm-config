@@ -2,11 +2,18 @@ local utils = {}
 
 local LEADER = "LEADER"
 
+utils.add_keybind = function(keys_table, bind)
+  local keybind = bind or {}
+  keybind.mods = bind.mods
+
+  table.insert(keys_table, keybind)
+end
+
 utils.add_leader_keybind = function(keys_table, bind)
   local keybind = bind or {}
   keybind.mods = bind.mods or LEADER
 
-  table.insert(keys_table, keybind)
+  utils.add_keybind(keys_table, keybind)
 end
 
 utils.remove_file = function(s)
