@@ -20,4 +20,9 @@ return {
     end
     win:set_config_overrides(overrides)
   end)},
+  {key="2", action=action_callback(function(win, pane)
+    local overrides = win:get_config_overrides() or {}
+    local utils = require("utils")
+    print(utils.dump(overrides))
+  end)},
 }
