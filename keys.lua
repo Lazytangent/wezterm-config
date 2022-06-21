@@ -22,6 +22,11 @@ local keysbinds = {
   {key=",", action=action.ShowDebugOverlay},
   {key="[", action=action.ActivateCopyMode},
 
+  {key="h", action=action.ActivatePaneDirection("Left")},
+  {key="j", action=action.ActivatePaneDirection("Down")},
+  {key="k", action=action.ActivatePaneDirection("Up")},
+  {key="l", action=action.ActivatePaneDirection("Right")},
+
   {key="c", action=action.SpawnTab("CurrentPaneDomain")},
   {key="d", action=action.DetachDomain("CurrentPaneDomain")},
   {key="n", action=action.ActivateTabRelative(1)},
