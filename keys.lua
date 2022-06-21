@@ -19,44 +19,41 @@ end)
 local keys = {}
 
 local keysbinds = {
-  {key="s", action=action{SplitVertical={domain="CurrentPaneDomain"}}},
-  {key="v", action=action{SplitHorizontal={domain="CurrentPaneDomain"}}},
-  {key="x", action=action{CloseCurrentPane={confirm=true}}},
-  {key="[", action="ActivateCopyMode"},
-  {key="n", action=action{ActivateTabRelative=1}},
-  {key="p", action=action{ActivateTabRelative=-1}},
-  {key="c", action=action{SpawnTab="CurrentPaneDomain"}},
-  {key="t", action=action{SpawnTab="DefaultDomain"}},
-  {key="w", action=action{ShowLauncherArgs={flags="DOMAINS"}}},
-  {key="d", action=action{DetachDomain="CurrentPaneDomain"}},
-  {key=",", action="ShowDebugOverlay"},
+  {key="s", action=action.SplitVertical{domain="CurrentPaneDomain"}},
+  {key="v", action=action.SplitHorizontal{domain="CurrentPaneDomain"}},
+  {key="x", action=action.CloseCurrentPane{confirm=true}},
+  {key="[", action=action.ActivateCopyMode},
+  {key="n", action=action.ActivateTabRelative(1)},
+  {key="p", action=action.ActivateTabRelative(-1)},
+  {key="c", action=action.SpawnTab("CurrentPaneDomain")},
+  {key="t", action=action.SpawnTab("DefaultDomain")},
+  {key="w", action=action.ShowLauncherArgs{flags="DOMAINS"}},
+  {key="d", action=action.DetachDomain("CurrentPaneDomain")},
+  {key=",", action=action.ShowDebugOverlay},
 
-  {key="m", mods=LEADER, action=action{
-    ActivateKeyTable={
+  {key="m", mods=LEADER, action=action.ActivateKeyTable{
       name="localleader",
       one_shot=false,
       replace_current=false,
       timeout_milliseconds=1000,
     },
-  }},
-  {key="l", mods="LEADER|CTRL", action=action{
-    ActivateKeyTable={
+  },
+  {key="l", mods="LEADER|CTRL", action=action.ActivateKeyTable{
       name="launchers",
       one_shot=true,
       replace_current=false,
       timeout_milliseconds=1000,
     },
-  }},
-  {key="f", mods="LEADER|CTRL", action=action{
-    ActivateKeyTable={
+  },
+  {key="f", mods="LEADER|CTRL", action=action.ActivateKeyTable{
       name="ctrl_f",
       one_shot=true,
       replace_current=false,
       timeout_milliseconds=1000,
     },
-  }},
+  },
 
-  {key="a", mods="LEADER|CTRL", action=action{SendString="\x01"}},
+  {key="a", mods="LEADER|CTRL", action=action.SendString("\x01")},
 }
 
 for _, keybind in ipairs(keysbinds) do
