@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local catppuccin = require("colors.catppuccin").setup({flavour = "mocha"})
 
-require("tab_bar")
+require("events")
 local leader = require("keys.leader")
 local keys = require("keys")
 local key_tables = require("keys.tables")
