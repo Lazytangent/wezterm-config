@@ -12,6 +12,7 @@ return {
   {key="UpArrow",   mods="NONE", action=action.CopyMode("PriorMatch")},
 
   {key="c", mods="CTRL", action=action.CopyMode("Close")},
+  {key="g", mods="CTRL", action=action.CopyMode("Close")},
   {key="n", mods="CTRL", action=action.CopyMode("NextMatchPage")},
   {key="p", mods="CTRL", action=action.CopyMode("PriorMatch")},
   {key="r", mods="CTRL", action=action.CopyMode("CycleMatchType")},
