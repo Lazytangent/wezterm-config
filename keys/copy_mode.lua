@@ -6,6 +6,9 @@ return {
     action.CopyTo("Clipboard"),
     action.CopyMode("Close"),
   }},
+  {key="/", mods="NONE", action=action.Search{CaseSensitiveString=""}},
+  {key="n", mods="NONE", action=action.CopyMode("NextMatch")},
+  {key="N", mods="SHIFT", action=action.CopyMode("PriorMatch")},
 
   -- Original Default Copy Mode Bindings
   {key="c", mods="CTRL", action=action.CopyMode("Close")},
