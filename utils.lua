@@ -1,6 +1,7 @@
 local utils = {}
 
-local LEADER = "LEADER"
+utils.LEADER = "LEADER"
+utils.MAX_TAB_LENGTH = 50
 
 utils.add_keybind = function(keys_table, bind)
   local keybind = bind or {}
@@ -11,7 +12,7 @@ end
 
 utils.add_leader_keybind = function(keys_table, bind)
   local keybind = bind or {}
-  keybind.mods = bind.mods or LEADER
+  keybind.mods = bind.mods or utils.LEADER
 
   utils.add_keybind(keys_table, keybind)
 end
@@ -21,7 +22,7 @@ utils.remove_file = function(s)
 end
 
 utils.replace_home = function(s)
-  return string.gsub(s, "^/Users/petermai(.*)", "~%1")
+  return string.gsub(s, "^/Users/%a+(.*)", "~%1")
 end
 
 utils.pad_with_space = function(s)
@@ -31,6 +32,14 @@ end
 utils.include_copy_prefix = function(s, original)
   if string.find(original, "Copy mode") ~= nil then
     return "Copy Mode: " .. s
+  end
+
+  return s
+end
+
+utils.shorten = function(s)
+  if #s >= utils.MAX_TAB_LENGTH then
+    return s:gsub(".*(/%.?%a+)", "..%1")
   end
 
   return s

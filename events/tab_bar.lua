@@ -5,6 +5,7 @@ local remove_file = u.remove_file
 local replace_home = u.replace_home
 local pad_with_space = u.pad_with_space
 local include_copy_prefix = u.include_copy_prefix
+local shorten = u.shorten
 
 local right = utf8.char(0xe0bc)
 local left = utf8.char(0xe0ba)
@@ -14,6 +15,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   local original_title = pane.title
 
   local title_text = include_copy_prefix(replace_home(remove_file(pane.current_working_dir)), original_title)
+  title_text = shorten(title_text)
   local title = pad_with_space(pane.pane_id .. ": " .. title_text)
 
   local right_edge_background = "#1e1e2e"
