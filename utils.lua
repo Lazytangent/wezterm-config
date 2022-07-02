@@ -38,7 +38,7 @@ utils.include_copy_prefix = function(s, original)
 end
 
 utils.shorten = function(s)
-  if #s >= utils.MAX_TAB_LENGTH then
+  if #s >= utils.MAX_TAB_LENGTH - 4 then
     return s:gsub(".*(/%.?%a+)", "..%1")
   end
 
