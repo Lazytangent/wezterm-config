@@ -16,7 +16,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
   local title_text = include_copy_prefix(replace_home(remove_file(pane.current_working_dir)), original_title)
   title_text = include_copy_prefix(shorten(title_text), original_title)
-  local title = pad_with_space(tab.tab_index .. ": " .. title_text)
+  local tab_number = tab.tab_index + 1
+  local title = pad_with_space(tab_number .. ": " .. title_text)
 
   local right_edge_background = "#1e1e2e"
   local left_edge_background = "#1e1e2e"
