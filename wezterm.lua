@@ -11,7 +11,7 @@ return {
   adjust_window_size_when_changing_font_size = false,
   colors = catppuccin,
   font = wezterm.font("Fira Code"),
-  font_size = 12.5,
+  font_size = 13.5,
   key_tables = key_tables,
   keys = keys,
   leader = leader,
