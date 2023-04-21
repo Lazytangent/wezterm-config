@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-local catppuccin = require("colors.catppuccin").setup({flavour = "mocha"})
 
 require("events")
 local leader = require("keys.leader")
@@ -9,9 +8,9 @@ local utils = require("utils")
 
 return {
   adjust_window_size_when_changing_font_size = false,
-  colors = catppuccin,
-  font = wezterm.font("FiraCode Nerd Font"),
-  font_size = 13.5,
+  color_scheme = "Catppuccin Mocha",
+  font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Light" }),
+  font_size = 11,
   key_tables = key_tables,
   keys = keys,
   leader = leader,
