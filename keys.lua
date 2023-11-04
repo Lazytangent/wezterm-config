@@ -10,7 +10,7 @@ local LEADER = "LEADER"
 
 local keys = {}
 
-local keysbinds = {
+local keybinds = {
   {key=",", action=action.ShowDebugOverlay},
   {key="[", action=action.ActivateCopyMode},
 
@@ -53,7 +53,7 @@ local keysbinds = {
   {key="a", mods="LEADER|CTRL", action=action.SendString("\x01")},
 }
 
-for _, keybind in ipairs(keysbinds) do
+for _, keybind in ipairs(keybinds) do
   add_leader_keybind(keys, keybind)
 end
 
