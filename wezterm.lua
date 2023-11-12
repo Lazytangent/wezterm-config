@@ -9,7 +9,7 @@ require "tab_bar_style"
 return {
   adjust_window_size_when_changing_font_size = false,
   colors = require "colors.quixotic",
-  font = wezterm.font "JetBrainsMono Nerd Font",
+  font = wezterm.font "Monaspace Argon",
   font_size = 11,
   key_tables = key_tables,
   keys = keys,
